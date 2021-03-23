@@ -11,38 +11,38 @@ class ViewController: UIViewController {
 
     @IBOutlet private weak var textField1: UITextField!
     @IBOutlet private weak var textField2: UITextField!
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet private weak var segmentedControl: UISegmentedControl!
     @IBOutlet private weak var resultLabel: UILabel!
 
     var result: Double = 0.0
 
-    @IBAction func selectOperator(_ sender: UISegmentedControl) {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 
-        let number1: Double = Double(textField1.text!) ?? 0
-        let number2: Double = Double(textField2.text!) ?? 0
+    @IBAction func pressButton(_ sender: Any) {
+        let number1: Double = Double(textField1.text!) ?? 0.0
+        let number2: Double = Double(textField2.text!) ?? 0.0
+        let Index = segmentedControl.selectedSegmentIndex
 
-        if sender.selectedSegmentIndex == 0 {
+        if Index == 0 {
             result = number1 + number2
         }
-        else if sender.selectedSegmentIndex == 1 {
+        else if Index == 1 {
             result = number1 - number2
         }
-        else if sender.selectedSegmentIndex == 2 {
+        else if Index == 2 {
             result = number1 * number2
         }
-        else if sender.selectedSegmentIndex == 3 {
+        else if Index == 3 {
             if number2 == 0 {
-                textField2.text = "1以上を入力してください"
+                textField2.text = "0以外を入力してください"
                 return
             }else {
                 result = number1 / number2
             }
         }
-    }
-
-    @IBAction func pressButton(_ sender: Any) {
         resultLabel.text = String(result)
-
     }
 }
 

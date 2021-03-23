@@ -53,9 +53,6 @@
                                     <segment title="×"/>
                                     <segment title="÷"/>
                                 </segments>
-                                <connections>
-                                    <action selector="selectOperator:" destination="BYZ-38-t0r" eventType="valueChanged" id="8YG-mN-7py"/>
-                                </connections>
                             </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -63,7 +60,7 @@
                     </view>
                     <connections>
                         <outlet property="resultLabel" destination="amU-M6-YjR" id="tlP-eX-fZJ"/>
-                        <outlet property="segmentedControl" destination="IBT-M4-3fJ" id="fG6-Te-9i4"/>
+                        <outlet property="segmentedControl" destination="IBT-M4-3fJ" id="bQf-Pk-ppI"/>
                         <outlet property="textField1" destination="IWs-is-pAO" id="BQv-WL-9Q7"/>
                         <outlet property="textField2" destination="K3n-xL-ouV" id="fW2-ne-dKc"/>
                     </connections>
